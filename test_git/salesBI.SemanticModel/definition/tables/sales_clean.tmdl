@@ -1,0 +1,115 @@
+table sales_clean
+	lineageTag: 0629b64f-a6cf-466f-80ab-89821d0f8f5f
+	sourceLineageTag: [dbo].[sales_clean]
+
+	column State
+		dataType: string
+		lineageTag: 501da299-4a2f-4567-b938-7bb90276e764
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 0bada960-a78a-41f1-b5db-5124d25edbbb
+		sourceLineageTag: Product
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: f8f981ce-0def-42a9-bee1-a2c6610b84ec
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: ae4db8af-110b-4786-b243-d4b211e302cf
+		sourceLineageTag: UnitPrice
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sales
+		dataType: double
+		lineageTag: c600eb4e-fbbd-40a8-b7d5-ed865e9d2280
+		sourceLineageTag: Sales
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderID
+		dataType: string
+		lineageTag: e228d4d6-165e-4423-bcc2-0b4eb5849752
+		sourceLineageTag: OrderID
+		summarizeBy: none
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 17ac8a5f-ea1b-46cd-aa6f-d301a53725fe
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: 473d9917-121f-432e-8bc6-f6b40d71f9b6
+		sourceLineageTag: CustomerID
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: f39b41ab-1438-4a9d-9b85-5bde74d9b383
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: fe88429d-d499-4577-b1d9-59f0ea1b6bdd
+		sourceLineageTag: Segment
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 413a4f1d-eff9-4267-9969-5bc85530fce3
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sales_clean = entity
+		mode: directLake
+		source
+			entityName: sales_clean
+			expressionSource: 'DirectLake - FabricMiniSales'
+

@@ -1,0 +1,11 @@
+expression 'DirectLake - FabricMiniSales' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/2afe4bed-04ca-4f51-b15d-7e4e95d7d8de/7d0f4949-6a4f-4ad6-996e-c5f95ef64cdf", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 785a0685-685b-40bc-a6c7-6a220a04e6d3
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[sales_raw]"}},"objectType":"Table"}]
+
