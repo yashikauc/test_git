@@ -1,0 +1,9 @@
+expression 'DirectLake - git' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/9572e22b-44d1-49a5-802a-4a60fc63ca48/3a5ced5c-9412-47b8-920a-546881ec3dfe", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 3f004d65-9939-434b-826c-a9df19e7d5de
+
+	annotation PBI_IncludeFutureArtifacts = False
+

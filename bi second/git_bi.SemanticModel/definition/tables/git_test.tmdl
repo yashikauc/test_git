@@ -1,0 +1,48 @@
+table git_test
+	lineageTag: 205bf3ec-3313-45f9-910f-d70f15196910
+	sourceLineageTag: [dbo].[git_test]
+
+	column CourseID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c556c1f-a0d0-45ae-808e-5bb3ed2f335a
+		sourceLineageTag: CourseID
+		summarizeBy: count
+		sourceColumn: CourseID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseName
+		dataType: string
+		lineageTag: 0af4c530-39c6-49f9-b3a0-f5062169d581
+		sourceLineageTag: CourseName
+		summarizeBy: none
+		sourceColumn: CourseName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Instructor
+		dataType: string
+		lineageTag: 73c19cb9-b444-4d42-bde7-9482179249c3
+		sourceLineageTag: Instructor
+		summarizeBy: none
+		sourceColumn: Instructor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Credits
+		dataType: int64
+		formatString: 0
+		lineageTag: 85c3b0a4-dce5-47d6-bf79-32e8c2ab170e
+		sourceLineageTag: Credits
+		summarizeBy: sum
+		sourceColumn: Credits
+
+		annotation SummarizationSetBy = Automatic
+
+	partition git_test = entity
+		mode: directLake
+		source
+			entityName: git_test
+			expressionSource: 'DirectLake - git'
+
